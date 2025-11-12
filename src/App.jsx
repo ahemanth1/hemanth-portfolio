@@ -188,7 +188,7 @@ useEffect(() => {
         letterSpacing: '-1px',
         textShadow: '0 0 15px rgba(255,255,255,0.3)'
       }}>
-        Hi, I’m <span style={{ color: '#00bcd4' }}>Hemanth Adigopula</span>
+        Hi, I’m <span className="highlight" style={{ color: '#00bcd4' }}>Hemanth Adigopula</span>
       </h1>
 
       <p className="subtitle" style={{
@@ -288,23 +288,25 @@ useEffect(() => {
           <h2 className="section-title">Projects</h2>
           <div className="grid projects" style={{ marginTop: 18 }}>
             {projects.map((p, i) => (
-              <article key={p.title} className="card" data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
-                {p.image ? (
-                  <img src={p.image} alt={p.title} style={{ height: 140, width: '100%', objectFit: 'cover', borderRadius: 12, border: '1px solid var(--border)' }} />
-                ) : (
-                  <div style={{height:140, border:"1px solid var(--border)", borderRadius:12, background:"#1a1a1a"}} />
-                )}
-                <h3 style={{ marginTop: 10 }}>{p.title}</h3>
-                <p className="subtitle" style={{ marginTop: 6 }}>{p.description}</p>
-                <div className="tags">
-                  {p.tech.map((t) => (
-                    <span key={t} className="tag">{t}</span>
-                  ))}
-                </div>
-                <div className="row" style={{ marginTop: 10 }}>
-                  <a className="btn" href={p.links.code}>Code</a>
-                </div>
-              </article>
+              <article key={p.title} className="project-card" data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
+  <div className="card-inner card">
+    {p.image ? (
+      <img src={p.image} alt={p.title} />
+    ) : (
+      <div className="card-media" style={{height:140, border:"1px solid var(--border)", borderRadius:12, background:"#1a1a1a"}} />
+    )}
+    <div style={{ padding: 16 }}>
+      <h3 style={{ marginTop: 10 }}>{p.title}</h3>
+      <p className="subtitle" style={{ marginTop: 6 }}>{p.description}</p>
+      <div className="tags" style={{ marginTop: 8 }}>
+        {p.tech.map((t) => <span key={t} className="tag">{t}</span>)}
+      </div>
+      <div className="row" style={{ marginTop: 10 }}>
+        <a className="btn" href={p.links.code}>Code</a>
+      </div>
+    </div>
+  </div>
+</article>
             ))}
           </div>
         </div>
