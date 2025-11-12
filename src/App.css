@@ -1,0 +1,71 @@
+/* Light theme overrides */
+:root[data-theme="light"] {
+  --bg: #fafafa;
+  --panel: #ffffff;
+  --text: #0a0a0a;     /* main text now dark */
+  --muted: #4b5563;   /* secondary text */
+  --border: #e5e7eb;
+  --brand: #111111;
+}
+
+/* Ensure common elements keep contrast in light mode */
+:root[data-theme="light"] .subtitle { color: var(--muted); }
+:root[data-theme="light"] .tag {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #374151;   /* languages in Projects become readable */
+}
+:root[data-theme="light"] .chip {
+  border-color: #e5e7eb; color: #4b5563;
+}
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .panel { background: var(--panel); border-color: var(--border); }
+
+:root[data-theme="light"] .btn.primary {
+  background: #111; color: #fff; border-color: #111; /* keep primary button visible */
+}
+/* Hero title stays bold/visible on light */
+:root[data-theme="light"] .title { color: #0a0a0a; }
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
