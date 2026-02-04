@@ -26,6 +26,7 @@ export default function Portfolio() {
     items: [
       { name: "Python", level: 4, icon: "fa-brands fa-python" },
       { name: "C", level: 3, icon: "fa-sollid fa-c" },
+      { name: "Java", level:3, icon: "fa-brands fa-java"},
     ],
   },
   {
